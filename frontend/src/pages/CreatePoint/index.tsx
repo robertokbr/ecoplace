@@ -7,7 +7,7 @@ import { LeafletMouseEvent } from 'leaflet';
 import axios from 'axios';
 import logo from '../../assets/logo.svg';
 import api from '../../services/api';
-import success from '../../assets/success.svg';
+import successImg from '../../assets/success.svg';
 
 interface Item {
   id: number;
@@ -42,12 +42,13 @@ const CreatePoint: React.FC = () => {
     email: '',
     whatsapp: '',
   });
-  const [backgroundSubmit, setbackgroundSubmit] = useState({
-    map: '',
-    back: 'null',
-  });
 
   const [selectedItems, setselectedItems] = useState<number[]>([]);
+
+  const [successPage, setsuccessPage] = useState({
+    map: '',
+    hideDiv: 'divHide ',
+  });
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(position => {
@@ -134,9 +135,9 @@ const CreatePoint: React.FC = () => {
       };
 
       await api.post('points', data);
-      setbackgroundSubmit({
-        map: 'hide',
-        back: 'sucessBackground',
+      setsuccessPage({
+        map: 'hideMap',
+        hideDiv: 'divShow',
       });
     } catch (err) {
       alert(err);
@@ -207,7 +208,7 @@ const CreatePoint: React.FC = () => {
             </legend>
 
             <Map
-              className={backgroundSubmit.map}
+              className={successPage.map}
               center={initialPosition}
               zoom={15}
               onclick={handleMapClick}
@@ -279,20 +280,21 @@ const CreatePoint: React.FC = () => {
           <button type="submit">Cadastrar ponto de coleta</button>
         </form>
       </div>
-
-      <div id="hideDiv" className={backgroundSubmit.back}>
+      <div id="hide" className={successPage.hideDiv}>
         <div className="content">
-          <main>
-            <h1>Cadastro concluido!</h1>
+          <div className="left">
+            <main>
+              <h1>Cadastro realizado!</h1>
 
-            <Link to="/">
-              <span>
-                <FiArrowLeft />
-              </span>
-              <strong>Voltar para home</strong>
-            </Link>
-          </main>
-          <img src={success} alt="success" />
+              <Link to="/">
+                <span>
+                  <FiArrowLeft />
+                </span>
+                <strong>Voltar para Home</strong>
+              </Link>
+            </main>
+          </div>
+          <img src={successImg} alt="success" />
         </div>
       </div>
     </>

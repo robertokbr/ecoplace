@@ -5,32 +5,38 @@
   margin: 0 auto;
 }
 
-
-/*SUCESS SCREEN*/
-.null{
+/**/
+.divHide{
   visibility: hidden;
 }
-.hide{
+
+
+
+.divShow{
+background-color: black;
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+transition: 200ms;
+opacity: 95%;
+
+}
+
+.divShow img{
+  margin-left: 50px;
+  width: 800px;
+}
+
+.hideMap{
   opacity: 80%;
 }
-.sucessBackground{
-  background: black;
-  position: fixed;
-  top: 0;
-  bottom:0;
-  right: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  transition: 200ms;
-  opacity: 95%;
 
-
-}
-
-
-.sucessBackground .content {
+.divShow .content {
   width: 100%;
   height: 100%;
   max-width: 1100px;
@@ -40,17 +46,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-
-}
-.sucessBackground img{
-  width: 800px;
 }
 
-.sucessBackground .content header {
+.divShow .content header {
   margin: 48px 0 0;
 }
 
-.sucessBackground .content main {
+.divShow .content main {
   flex: 1;
   max-width: 560px;
 
@@ -59,20 +61,18 @@
   justify-content: center;
 }
 
-.sucessBackground .content main h1 {
+.divShow .content main h1 {
   font-size: 54px;
-  color: white;
-  margin-right: 200px;
-
+  color: var(--title-color);
 }
 
-.sucessBackground .content main p {
+.divShow .content main p {
   font-size: 24px;
   margin-top: 24px;
   line-height: 38px;
 }
 
-.sucessBackground .content main a {
+.divShow .content main a {
   width: 100%;
   max-width: 360px;
   height: 72px;
@@ -87,7 +87,7 @@
   margin-top: 40px;
 }
 
-.sucessBackground .content main a span {
+.divShow .content main a span {
   display: block;
   background: rgba(0, 0, 0, 0.08);
   width: 72px;
@@ -99,19 +99,19 @@
   transition: background-color 0.2s;
 }
 
-.sucessBackground .content main a span svg {
+.divShow .content main a span svg {
   color: #FFF;
   width: 20px;
   height: 20px;
 }
 
-.sucessBackground .content main a strong {
+.divShow .content main a strong {
   flex: 1;
   text-align: center;
   color: #FFF;
 }
 
-.sucessBackground .content main a:hover {
+.divShow .content main a:hover {
   background: #2FB86E;
 }
 
