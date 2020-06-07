@@ -6,10 +6,11 @@ import {
   StyleSheet,
   TouchableOpacity,
   ScrollView,
+  Image,
 } from 'react-native';
 import Constants from 'expo-constants';
 import { useNavigation } from '@react-navigation/native';
-import MapView from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
 import { SvgUri } from 'react-native-svg';
 
 const Point = () => {
@@ -17,6 +18,9 @@ const Point = () => {
 
   function handleNavigateBack() {
     navigation.goBack();
+  }
+  function handleNavigateTODetail() {
+    navigation.navigate('Detail');
   }
 
   return (
@@ -38,7 +42,29 @@ const Point = () => {
               latitudeDelta: 0.014,
               longitudeDelta: 0.014,
             }}
-          />
+          >
+            <Marker
+              style={styles.mapMarker}
+              onPress={handleNavigateTODetail}
+              coordinate={{
+                latitude: -0.6311847,
+                longitude: -47.3608666,
+              }}
+            >
+              <View style={styles.mapMarkerContainer}>
+                <Image
+                  style={styles.mapMarkerImage}
+                  source={{
+                    uri:
+                      'https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80',
+                  }}
+                />
+                <Text style={styles.mapMarkerTitle}>
+                  Mercado do seu ffgfgfgfgfgfgfgfgfZé
+                </Text>
+              </View>
+            </Marker>
+          </MapView>
         </View>
       </View>
 
@@ -172,6 +198,7 @@ const styles = StyleSheet.create({
     color: '#FFF',
     fontSize: 13,
     lineHeight: 23,
+    marginLeft: 3,
   },
 
   itemsContainer: {
