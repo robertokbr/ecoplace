@@ -1,5 +1,12 @@
 import React from 'react';
-import { View, ImageBackground, Text, Image, StyleSheet } from 'react-native';
+import {
+  View,
+  ImageBackground,
+  Text,
+  Image,
+  StyleSheet,
+  SafeAreaView,
+} from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
 import { Feather as Icon } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
@@ -12,7 +19,7 @@ const Home = () => {
   }
 
   return (
-    <>
+    <SafeAreaView style={{ flex: 1 }}>
       <ImageBackground
         source={require('../../assets/home-background.png')}
         style={styles.container}
@@ -39,7 +46,7 @@ const Home = () => {
           </RectButton>
         </View>
       </ImageBackground>
-    </>
+    </SafeAreaView>
   );
 };
 
