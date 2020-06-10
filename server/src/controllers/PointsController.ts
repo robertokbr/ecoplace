@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-/* eslint-disable camelcase */
 import { Request, Response } from 'express';
 import knex from '../database/connection';
 

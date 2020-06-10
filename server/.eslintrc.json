@@ -28,9 +28,10 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "camelcase":"off",
+    "@typescript-eslint/explicit-module-boundary-types":"off",
     "prettier/prettier":"error",
     "class-methods-use-this": "off",
-    "@typescript-eslint/camelcase": "off",
     "import/extensions": [
       "error",
       "ignorePackages",
