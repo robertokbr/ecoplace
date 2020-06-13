@@ -135,19 +135,20 @@ const CreatePoint: React.FC = () => {
       data.append('city', city);
       data.append('latitude', String(latitude));
       data.append('longitude', String(longitude));
-      data.append('item', item.join(','));
+      data.append('items', item.join(','));
 
       if (selectedFile) {
         data.append('image', selectedFile);
       }
 
       await api.post('points', data);
+
       setsuccessPage({
         map: 'hideMap',
         hideDiv: 'divShow',
       });
     } catch (err) {
-      alert(err);
+      console.log(err);
     }
   }
 

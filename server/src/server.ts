@@ -14,7 +14,6 @@ app.use(
   express.static(path.resolve(__dirname, '..', 'uploads', 'userUploads')),
 );
 app.use(errors());
-
 app.listen(3333, () => {
   console.log('server on !!!');
 });

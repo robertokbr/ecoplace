@@ -4,8 +4,8 @@ export default {
   body: Joi.object().keys({
     name: Joi.string().required(),
     email: Joi.string().required().email(),
-    whatsapp: Joi.number().required(),
-    longitude: Joi.number().required(),
+    whatsapp: Joi.string().required(),
+    longitude: Joi.string().required(),
     latitude: Joi.number().required(),
     city: Joi.string().required(),
     uf: Joi.string().required().max(2),

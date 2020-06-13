@@ -20,9 +20,7 @@ routes.get('/points/:id', pointsController.show);
 routes.post(
   '/points',
   upload.single('image'),
-  celebrate(celebrateConfig, {
-    abortEarly: false,
-  }),
+  celebrate(celebrateConfig, { abortEarly: false }),
   pointsController.create,
 );
 
