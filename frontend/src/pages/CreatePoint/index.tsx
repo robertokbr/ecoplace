@@ -8,6 +8,7 @@ import axios from 'axios';
 import logo from '../../assets/logo.svg';
 import api from '../../services/api';
 import successImg from '../../assets/success.svg';
+import Dropzone from '../../components/Dropzone';
 
 interface Item {
   id: number;
@@ -22,6 +23,7 @@ interface IBGECityResponse {
 }
 
 const CreatePoint: React.FC = () => {
+  const [selectedFile, setSelectedFile] = useState<File>();
   const [items, setItems] = useState<Item[]>([]);
   const [ufs, setufs] = useState<string[]>([]);
   const [selectedUf, setSelectedUf] = useState('0');
@@ -123,16 +125,21 @@ const CreatePoint: React.FC = () => {
       const city = selectedCity;
       const [latitude, longitude] = selectedPosition;
       const item = selectedItems;
-      const data = {
-        name,
-        email,
-        whatsapp,
-        uf,
-        city,
-        latitude,
-        longitude,
-        items: item,
-      };
+
+      const data = new FormData();
+
+      data.append('name', name);
+      data.append('email', email);
+      data.append('whatsapp', whatsapp);
+      data.append('uf', uf);
+      data.append('city', city);
+      data.append('latitude', String(latitude));
+      data.append('longitude', String(longitude));
+      data.append('item', item.join(','));
+
+      if (selectedFile) {
+        data.append('image', selectedFile);
+      }
 
       await api.post('points', data);
       setsuccessPage({
@@ -161,7 +168,7 @@ const CreatePoint: React.FC = () => {
             <br />
             ponto de coleta
           </h1>
-
+          <Dropzone onFileUploaded={setSelectedFile} />
           <fieldset>
             <legend>
               <h2>Dados</h2>
