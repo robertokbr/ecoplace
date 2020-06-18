@@ -8,7 +8,6 @@ import api from '../../services/api';
 interface Announce {
   id: number;
   image: string;
-  image_url: string;
   name: string;
   email: string;
   whatsapp: number;
@@ -17,6 +16,7 @@ interface Announce {
   price: number;
   description: string;
   password: string;
+  imagem_url: string;
 }
 
 const Show: React.FC = () => {
@@ -80,7 +80,7 @@ const Show: React.FC = () => {
         {data.map(register => (
           <div className="register">
             <h1>{register.name}</h1>
-            <img src={register.image} alt="Foto" />
+            <img src={register.imagem_url} alt="Foto" />
           </div>
         ))}
       </div>
