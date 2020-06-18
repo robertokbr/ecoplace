@@ -38,6 +38,7 @@
   font-size: 24px;
   margin-top: 24px;
   line-height: 38px;
+  margin-bottom: 40px;
 }
 
 #page-home .content main a {
@@ -52,9 +53,14 @@
   align-items: center;
   overflow: hidden;
 
-  margin-top: 40px;
+  margin-top: 20px;
 }
-
+#page-home .content main a + a {
+  background: #6633CC;
+}
+#page-home .content main a + a + a{
+  background: #322153;
+}
 #page-home .content main a span {
   display: block;
   background: rgba(0, 0, 0, 0.08);
@@ -80,7 +86,8 @@
 }
 
 #page-home .content main a:hover {
-  background: #2FB86E;
+ opacity: 90%;
+ box-shadow: 0 0 15px -0.8px rgba(0, 0, 0, 0.068);
 }
 
 @media(max-width: 900px) {

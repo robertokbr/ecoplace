@@ -1,9 +1,9 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
-import logo from '../../assets/logo.svg';
+import { FiKey, FiArrowLeft } from 'react-icons/fi';
 import api from '../../services/api';
+import find from '../../assets/find.svg';
 
 interface Announce {
   id: number;
@@ -44,37 +44,47 @@ const Show: React.FC = () => {
   }
 
   return (
-    <div className="container">
-      <div id="page-create-point">
+    <div id="container">
+      <div id="divForm">
         <header>
-          <img src={logo} alt="Ecoleta" />
           <Link to="/">
             <FiArrowLeft />
             Voltar para home
           </Link>
         </header>
 
-        <form onSubmit={handleSubmit}>
-          <h1>Buscar cadastros</h1>
+        <div className="containerForm">
+          <form onSubmit={handleSubmit}>
+            <h1>Buscar cadastros</h1>
 
-          <fieldset>
-            <legend>
-              <h2>Palavra magica</h2>
-            </legend>
+            <fieldset>
+              <legend>
+                <h2>Palavra magica</h2>
+              </legend>
 
-            <div className="field">
-              <label htmlFor="password" />
-              <input
-                type="text"
-                name="password"
-                id="password"
-                onChange={handleInputChange}
-              />
-            </div>
+              <div className="field">
+                <label htmlFor="password" />
+                <input
+                  type="text"
+                  name="password"
+                  id="password"
+                  onChange={handleInputChange}
+                  placeholder="Password"
+                />
+                <FiKey
+                  style={{
+                    position: 'absolute',
+                    margin: '25px 0 0 350px',
+                    opacity: '50%',
+                  }}
+                />
+              </div>
 
-            <button type="submit">Buscar</button>
-          </fieldset>
-        </form>
+              <button type="submit">Buscar</button>
+            </fieldset>
+          </form>
+        </div>
+        <img src={find} alt="Find" />
       </div>
       <div className="registrations">
         {data.map(register => (
