@@ -43,6 +43,7 @@ const CreatePoint: React.FC = () => {
     name: '',
     email: '',
     whatsapp: '',
+    password: '',
   });
 
   const [selectedItems, setselectedItems] = useState<number[]>([]);
@@ -120,17 +121,17 @@ const CreatePoint: React.FC = () => {
   async function handleSubmit(event: FormEvent) {
     try {
       event.preventDefault();
-      const { name, email, whatsapp } = formData;
+      const { name, email, whatsapp, password } = formData;
       const uf = selectedUf;
       const city = selectedCity;
       const [latitude, longitude] = selectedPosition;
       const item = selectedItems;
-
       const data = new FormData();
 
       data.append('name', name);
       data.append('email', email);
       data.append('whatsapp', whatsapp);
+      data.append('password', password);
       data.append('uf', uf);
       data.append('city', city);
       data.append('latitude', String(latitude));
@@ -184,6 +185,15 @@ const CreatePoint: React.FC = () => {
                 onChange={handleInputChange}
               />
             </div>
+            <div className="field">
+              <label htmlFor="password">Descrição</label>
+              <input
+                type="text"
+                name="password"
+                id="password"
+                onChange={handleInputChange}
+              />
+            </div>
 
             <div className="field-group">
               <div className="field">
@@ -203,6 +213,28 @@ const CreatePoint: React.FC = () => {
                   type="text"
                   name="whatsapp"
                   id="whatsapp"
+                  onChange={handleInputChange}
+                />
+              </div>
+            </div>
+            <div className="field-group">
+              <div className="field">
+                <label htmlFor="email">Password</label>
+
+                <input
+                  type="text"
+                  name="password"
+                  id="password"
+                  onChange={handleInputChange}
+                />
+              </div>
+
+              <div className="field">
+                <label htmlFor="Whatsapp">Price</label>
+                <input
+                  type="text"
+                  name="Price"
+                  id="Price"
                   onChange={handleInputChange}
                 />
               </div>
