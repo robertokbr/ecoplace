@@ -26,6 +26,13 @@ ECOPLACE
 </a>
 </p>
 
+<h1 align="center">
+  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/screencapture-localhost-3000-2020-06-24-09_49_58.png">
+   <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Captura%20de%20Tela%20(105).png" >
+  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Captura%20de%20Tela%20(106).png" >
+  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Captura%20de%20Tela%20(107).png" ><img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Home.png" >
+</h1>
+
 ## 💻 Techs
 - Typescript -
 - [NodeJs](https://nodejs.org/en/) - Build the server
@@ -67,17 +74,9 @@ $ yarn start
 - Commit your change: `git commit -m 'feat: My new feature'`
 - Push your branch: `git push origin my-feature`
 
-<h1 align="center">
-  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/screencapture-localhost-3000-2020-06-24-09_49_58.png">
-   <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Captura%20de%20Tela%20(105).png" >
-  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Captura%20de%20Tela%20(106).png" >
-</h1>
-<p>
-<img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Captura%20de%20Tela%20(107).png" ><img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Home.png" >
-</p>
 ---
 
-Roberto Junior :wave: [Join me on Linkedin!](https://www.linkedin.com/in/robertojrcdc/)
+Made by Roberto Junior :wave: [Join me on Linkedin!](https://www.linkedin.com/in/robertojrcdc/)
 
 [nodejs]: https://nodejs.org/
 [yarn]: https://yarnpkg.com/
