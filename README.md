@@ -1,32 +1,33 @@
 <h1 align="center">
-    <img src="https://github.com/robertokbr/Be-The-hero/blob/master/frontend/src/assets/logo.svg" width="250px" /><br>
-    <br>
-  Be the Hero
+  <img src="https://github.com/robertokbr/Ecoplace/blob/master/frontend/src/assets/logoAlt.svg" width="170px" /><br>
+  <br>
+ECOPLACE
 </h1>
 
 <h4 align="center">
-Web and Mobile app to join NGOs  (Non-governmental organizations) end their causes into people thats want to turn the world a batter place.
+  Recycle, Collect, Buy Recycled products, and help to save the world! 
 </h4>
 <p align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/robertokbr/Be-The-hero.svg">
+<img alt="GitHub top language" src="https://img.shields.io/github/languages/top/robertokbr/Ecoplace.svg">
 
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/robertokbr/Be-The-hero.svg">
+<img alt="GitHub language count" src="https://img.shields.io/github/languages/count/robertokbr/Ecoplace.svg">
 
-  <a href="https://www.codacy.com/app/robertokbr/Be-The-hero?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=robertokbr/Be-The-hero&amp;utm_campaign=Badge_Grade">
-    <img alt="Codacy grade" src="https://img.shields.io/codacy/grade/1b577a07dda843aba09f4bc55d1af8fc.svg">
-  </a>
+<a href="https://www.codacy.com/app/robertokbr/Ecoplace?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=robertokbr/Ecoplace&amp;utm_campaign=Badge_Grade">
+  <img alt="Codacy grade" src="https://img.shields.io/codacy/grade/1b577a07dda843aba09f4bc55d1af8fc.svg">
+</a>
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/robertokbr/Be-The-hero.svg">
-  <a href="https://github.com/robertokbr/Be-The-hero/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/robertokbr/Be-The-hero.svg">
-  </a>
+<img alt="Repository size" src="https://img.shields.io/github/repo-size/robertokbr/Ecoplace.svg">
+<a href="https://github.com/robertokbr/Ecoplace/commits/master">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/robertokbr/Ecoplace.svg">
+</a>
 
-  <a href="https://github.com/robertokbr/Be-The-hero/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/robertokbr/Be-The-hero.svg">
-  </a>
+<a href="https://github.com/robertokbr/Ecoplace/issues">
+  <img alt="Repository issues" src="https://img.shields.io/github/issues/robertokbr/Ecoplace.svg">
+</a>
 </p>
 
 ## 💻 Techs
+- Typescript -
 - [NodeJs](https://nodejs.org/en/) - Build the server
 - [ReactJs](https://reactjs.org) - A JavaScript library for building user interfaces
 - [React Native](https://reactnative.dev) - Native Development
@@ -37,8 +38,8 @@ Web and Mobile app to join NGOs  (Non-governmental organizations) end their caus
 - [Celebrate](https://github.com/arb/celebrate) - A joi validation middleware for Express.
 - [CORS](https://www.npmjs.com/package/cors) - Cross-origin Resource Sharing
 - [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and NodeJs
-- [Jest](https://jestjs.io) - Jest is a JavaScript testing framework maintained by Facebook
-- [Supertest](https://github.com/visionmedia/supertest) - Super-agent driven library for testing node.js HTTP servers
+- React-leaflet - 
+- Multer - 
 
 
 ## 🕹 How To Use
@@ -47,10 +48,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/robertokbr/Be-The-hero
+$ git clone https://github.com/robertokbr/Ecoplace
 
 # Go into the repository
-$ cd Be-The-hero
+$ cd Ecoplace
 
 # Install dependencies
 $ yarn install
@@ -58,7 +59,7 @@ $ yarn install
 # Run the app
 $ yarn start
 ```
-  
+
 ## 🏗 How to contribute
 
 - Fork this repo;
@@ -66,6 +67,14 @@ $ yarn start
 - Commit your change: `git commit -m 'feat: My new feature'`
 - Push your branch: `git push origin my-feature`
 
+<h1 align="center">
+  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/screencapture-localhost-3000-2020-06-24-09_49_58.png">
+   <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Captura%20de%20Tela%20(105).png" >
+  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Captura%20de%20Tela%20(106).png" >
+</h1>
+<p>
+<img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Captura%20de%20Tela%20(107).png" ><img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Home.png" >
+</p>
 ---
 
 Roberto Junior :wave: [Join me on Linkedin!](https://www.linkedin.com/in/robertojrcdc/)
@@ -76,7 +85,4 @@ Roberto Junior :wave: [Join me on Linkedin!](https://www.linkedin.com/in/roberto
 [vceditconfig]: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
 [vceslint]: https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 
-## Certificate
-<h4 align="center">
-<img src="https://github.com/robertokbr/Be-The-hero/blob/master/frontend/src/assets/Captura%20de%20Tela%20(60).png" width="720px"  /><br>  
 
