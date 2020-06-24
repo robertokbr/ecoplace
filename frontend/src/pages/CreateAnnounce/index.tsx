@@ -1,5 +1,4 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
-import './styles.css';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
@@ -8,14 +7,10 @@ import axios from 'axios';
 import api from '../../services/api';
 import successImg from '../../assets/success.svg';
 import Dropzone from '../../components/Dropzone';
+import './styles.css';
 import logo from '../../assets/logoAlt.svg';
-import recycle from '../../assets/recycling_.svg';
+import recycle from '../../assets/recycle.svg';
 
-interface Item {
-  id: number;
-  title: string;
-  imagem_url: string;
-}
 interface IBGEUFResponse {
   sigla: string;
 }
@@ -24,8 +19,8 @@ interface IBGECityResponse {
 }
 
 const CreatePoint: React.FC = () => {
+  const [descriptionValue, setdescriptionValue] = useState('');
   const [selectedFile, setSelectedFile] = useState<File>();
-  const [items, setItems] = useState<Item[]>([]);
   const [ufs, setufs] = useState<string[]>([]);
   const [selectedUf, setSelectedUf] = useState('0');
   const [cities, setcities] = useState<string[]>([]);
@@ -45,9 +40,8 @@ const CreatePoint: React.FC = () => {
     email: '',
     whatsapp: '',
     password: '',
+    price: '',
   });
-
-  const [selectedItems, setselectedItems] = useState<number[]>([]);
 
   const [successPage, setsuccessPage] = useState({
     map: '',
@@ -58,12 +52,6 @@ const CreatePoint: React.FC = () => {
     navigator.geolocation.getCurrentPosition(position => {
       const { latitude, longitude } = position.coords;
       setinitialPosition([latitude, longitude]);
-    });
-  }, []);
-
-  useEffect(() => {
-    api.get('items').then(response => {
-      setItems(response.data);
     });
   }, []);
 
@@ -110,51 +98,44 @@ const CreatePoint: React.FC = () => {
     setFormData({ ...formData, [name]: value });
   }
 
-  function handelSelectedItem(id: number) {
-    const alreadySelected = selectedItems.findIndex(item => item === id);
-    if (alreadySelected >= 0) {
-      const filteredItems = selectedItems.filter(item => item !== id);
-      setselectedItems(filteredItems);
-    } else {
-      setselectedItems([...selectedItems, id]);
-    }
-  }
   async function handleSubmit(event: FormEvent) {
     event.preventDefault();
-    const { name, email, whatsapp, password } = formData;
+    const { name, email, whatsapp, password, price } = formData;
+    const description = descriptionValue;
     const uf = selectedUf;
     const city = selectedCity;
     const [latitude, longitude] = selectedPosition;
-    const item = selectedItems;
     const data = new FormData();
 
     data.append('name', name);
     data.append('email', email);
     data.append('whatsapp', whatsapp);
     data.append('password', password);
+    data.append('price', price.split(',').join('.'));
+    data.append('description', description);
     data.append('uf', uf);
     data.append('city', city);
     data.append('latitude', String(latitude));
     data.append('longitude', String(longitude));
-    data.append('items', item.join(','));
 
     if (selectedFile) {
       data.append('image', selectedFile);
     }
     try {
-      await api.post('points', data);
-      console.log(data);
+      await api.post('announce', data);
+
       setsuccessPage({
         map: 'hideMap',
         hideDiv: 'divShow',
       });
-    } catch (errors) {
-      alert(errors);
+    } catch (message) {
+      alert(message);
+      console.log(message);
     }
   }
 
   return (
-    <>
+    <div className="cointainerAnnounce">
       <div id="page-create-point">
         <div id="divForm">
           <div className="titlePage">
@@ -163,13 +144,14 @@ const CreatePoint: React.FC = () => {
               alt="Logo"
               style={{ width: '120px', marginRight: '10px' }}
             />
-            <h1>coleta</h1>
+            <h1>commerce</h1>
           </div>
           <img
             src={recycle}
             alt="recycle"
             style={{
-              width: '750px',
+              width: '850px',
+              marginBottom: '0',
             }}
           />
         </div>
@@ -189,7 +171,7 @@ const CreatePoint: React.FC = () => {
             </legend>
 
             <div className="field">
-              <label htmlFor="name">Nome da entidade</label>
+              <label htmlFor="name">Título</label>
               <input
                 type="text"
                 name="name"
@@ -220,15 +202,38 @@ const CreatePoint: React.FC = () => {
                 />
               </div>
             </div>
+            <div className="field-group">
+              <div className="field">
+                <label htmlFor="password">Password</label>
 
-            <div className="field">
-              <label htmlFor="email">Password</label>
+                <input
+                  type="text"
+                  name="password"
+                  id="password"
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="field">
+                <label htmlFor="price">Preço</label>
 
-              <input
-                type="text"
-                name="password"
-                id="password"
-                onChange={handleInputChange}
+                <input
+                  type="text"
+                  name="price"
+                  id="price"
+                  onChange={handleInputChange}
+                />
+              </div>
+            </div>
+            <div
+              className="field"
+              style={{
+                height: '200px',
+              }}
+            >
+              <label htmlFor="description">Descrição</label>
+              <textarea
+                value={descriptionValue}
+                onChange={e => setdescriptionValue(e.target.value)}
               />
             </div>
           </fieldset>
@@ -289,34 +294,14 @@ const CreatePoint: React.FC = () => {
             </div>
           </fieldset>
 
-          <fieldset>
-            <legend>
-              <h2>Itens de coleta</h2>
-              <span>Selecione um ou mais itens abaixo</span>
-            </legend>
-
-            <ul className="items-grid">
-              {items.map(item => (
-                <li
-                  key={item.id}
-                  onClick={() => handelSelectedItem(item.id)}
-                  className={selectedItems.includes(item.id) ? 'selected' : ''}
-                >
-                  <img src={item.imagem_url} alt={item.title} />
-                  <span>{item.title}</span>
-                </li>
-              ))}
-            </ul>
-          </fieldset>
-
-          <button type="submit">Cadastrar ponto de coleta</button>
+          <button type="submit">Cadastrar Anúncio</button>
         </form>
       </div>
       <div id="hide" className={successPage.hideDiv}>
         <div className="content">
           <div className="left">
             <main>
-              <h1>Cadastro realizado!</h1>
+              <h1>Anúcio Cadastrado!</h1>
 
               <Link to="/">
                 <span>
@@ -329,7 +314,7 @@ const CreatePoint: React.FC = () => {
           <img src={successImg} alt="success" />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default CreatePoint;

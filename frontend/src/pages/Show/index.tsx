@@ -4,6 +4,7 @@ import './styles.css';
 import { Link } from 'react-router-dom';
 import { FiKey, FiArrowLeft, FiTrash2 } from 'react-icons/fi';
 import api from '../../services/api';
+import logo from '../../assets/logoAlt.svg';
 
 interface Announce {
   id: number;
@@ -58,6 +59,11 @@ const Show: React.FC = () => {
         </div>
 
         <div className="containerForm">
+          <img
+            src={logo}
+            alt="Ecoleta"
+            style={{ width: '120px', margin: '100px 0 50px 120px' }}
+          />
           <form onSubmit={handleSubmit}>
             <h1>Buscar cadastros</h1>
 
@@ -100,6 +106,7 @@ const Show: React.FC = () => {
                 <div className="titleDelete">
                   <h3>{register.name}</h3>
                   <FiTrash2
+                    style={{ cursor: 'pointer' }}
                     onClick={() => {
                       deleteRegister(register.id);
                     }}
@@ -107,7 +114,11 @@ const Show: React.FC = () => {
                 </div>
 
                 <div className="divTextPrice">
-                  <h3>{register.price ? `R$${register.price}` : ''}</h3>
+                  <h3>
+                    {register.price
+                      ? `R$${register.price.toFixed(2).split('.').join(',')}`
+                      : ''}
+                  </h3>
 
                   <p>{register.description}</p>
                 </div>

@@ -24,6 +24,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 100px 0 30px 0;
 }
 
 .header a {
@@ -42,7 +43,8 @@
 
 .containerForm{
   display: flex;
-  margin: 200px 150px 280px 0;
+  flex-direction: column;
+  margin: 0 150px 280px 0;
 }
 
 #divForm form h1 {
@@ -145,7 +147,10 @@ div.register .registerContainer{
   flex-direction: row;
   box-sizing: border-box;
   max-height: 200px;
+  height: 200px;
     max-width: 970px;
+    width: 970px;
+
 }
 
 div.register .registerImg{

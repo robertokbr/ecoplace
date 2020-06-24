@@ -1,7 +1,7 @@
 import React from 'react';
 import { FiLogIn, FiSearch } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logoAlt.svg';
 import './styles.css';
 
 const Home: React.FC = () => {
@@ -9,13 +9,21 @@ const Home: React.FC = () => {
     <div id="page-home">
       <div className="content">
         <header>
-          <img src={logo} alt="Ecoleta" />
+          <div className="headerContainer">
+            <img
+              src={logo}
+              alt="Ecoleta"
+              style={{ width: '100px', marginRight: '7px' }}
+            />
+            <h1>coplace</h1>
+          </div>
         </header>
 
         <main>
-          <h1>Seu Marketplace de coleta de resíduos.</h1>
+          <h1>Recicle, Venda e ajude o planeta com o Ecoplace! </h1>
           <p>
-            Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.
+            No ecoplace você pode cadastrar no mapa pontos de coleta do seu
+            material reciclado, comprar produtos reciclados e muito mais!
           </p>
           <Link to="/create-point">
             <span>
@@ -27,13 +35,13 @@ const Home: React.FC = () => {
             <span>
               <FiLogIn />
             </span>
-            <strong>Anunciar produto reciclado</strong>
+            <strong>Cadastre um Anúncio</strong>
           </Link>
           <Link to="/get-point">
             <span>
               <FiSearch />
             </span>
-            <strong>Ver cadastros</strong>
+            <strong>Buscar Cadastros</strong>
           </Link>
         </main>
       </div>

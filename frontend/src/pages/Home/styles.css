@@ -1,8 +1,19 @@
 #page-home {
   height: 100vh;
 
-  background: url('../../assets/home-background.svg') no-repeat 900px bottom;
+  background: #045257 url('../../assets/backgroundAlt.svg') no-repeat 1150px bottom;
 }
+.headerContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.headerContainer h1{
+font-size: 55px;
+color: white;
+margin-right: 900px;
+}
+
 
 #page-home .content {
   width: 100%;
@@ -31,36 +42,31 @@
 
 #page-home .content main h1 {
   font-size: 54px;
-  color: var(--title-color);
+  color: white;
 }
 
 #page-home .content main p {
-  font-size: 24px;
+  font-size: 20px;
   margin-top: 24px;
   line-height: 38px;
-  margin-bottom: 40px;
+  color: white;
 }
 
 #page-home .content main a {
   width: 100%;
   max-width: 360px;
   height: 72px;
-  background: var(--primary-color);
-  border-radius: 8px;
+  background: #0b666d;
+  border-radius: 10px;
   text-decoration: none;
 
   display: flex;
   align-items: center;
   overflow: hidden;
 
-  margin-top: 20px;
+  margin-top: 32px;
 }
-#page-home .content main a + a {
-  background: #6633CC;
-}
-#page-home .content main a + a + a{
-  background: #322153;
-}
+
 #page-home .content main a span {
   display: block;
   background: rgba(0, 0, 0, 0.08);
@@ -86,8 +92,7 @@
 }
 
 #page-home .content main a:hover {
- opacity: 90%;
- box-shadow: 0 0 15px -0.8px rgba(0, 0, 0, 0.068);
+  background: #30bb71;
 }
 
 @media(max-width: 900px) {
@@ -111,4 +116,10 @@
   #page-home .content main p {
     font-size: 24px;
   }
+}
+
+#page-home .content main a + a + a{
+max-width: 250px;
+margin-left: 40px;
+background-color:#075157 ;
 }
