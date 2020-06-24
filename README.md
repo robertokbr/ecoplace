@@ -5,7 +5,7 @@ ECOPLACE
 </h1>
 
 <h4 align="center">
-  Recycle, Collect, Buy Recycled products, and help to save the world! 
+  Recycle, Collect, Buy and sale Recycled products, and help to save the world! 
 </h4>
 <p align="center">
 <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/robertokbr/Ecoplace.svg">
