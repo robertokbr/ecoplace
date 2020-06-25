@@ -104,7 +104,7 @@
 #divForm form button {
   width: 100%;
   height: 56px;
-  background: #6633CC ;
+  background: #0b666d;
   border-radius: 8px;
   color: #FFF;
   font-weight: bold;
@@ -118,8 +118,26 @@
 }
 
 #divForm form button:hover {
-  background: var(--primary-color);
-}
+
+  background: linear-gradient(-45deg, #045257, #23A6D5,#23D5AB );
+  background-size: 400% 400%;
+  position: relative;
+  animation: change 10s ease-in-out infinite;
+  }
+  @keyframes change{
+  0% {
+  background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0 50%;
+      }
+
+  }
+
+
 
 .registrations{
   margin-top: 30px;
