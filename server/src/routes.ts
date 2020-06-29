@@ -31,7 +31,7 @@ routes.post(
   celebrate(celebrateConfig.announce, { abortEarly: false }),
   announcementController.create,
 );
-routes.get('/announce/:password', announcementController.index);
+routes.get('/announce/:password', announcementController.show);
 routes.delete('/delete/:id', announcementController.delete);
 
 export default routes;

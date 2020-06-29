@@ -26,7 +26,7 @@ interface Point {
   id: number;
   name: string;
   image: string;
-  image_url: string;
+  imagem_url: string;
   latitude: number;
   longitude: number;
 }
@@ -139,7 +139,7 @@ const Point = () => {
                     <Image
                       style={styles.mapMarkerImage}
                       source={{
-                        uri: point.image_url,
+                        uri: point.imagem_url,
                       }}
                     />
                     <Text style={styles.mapMarkerTitle}>{point.name}</Text>
@@ -224,7 +224,6 @@ const styles = StyleSheet.create({
     height: 70,
     backgroundColor: '#34CB79',
     flexDirection: 'column',
-    borderRadius: 8,
     overflow: 'hidden',
     alignItems: 'center',
   },
@@ -263,7 +262,6 @@ const styles = StyleSheet.create({
     marginRight: 8,
     alignItems: 'center',
     justifyContent: 'space-between',
-
     textAlign: 'center',
   },
 

@@ -14,6 +14,7 @@ class AnnouncementController {
       price,
       description,
       password,
+      items,
     } = request.body;
 
     const annouce = {
@@ -30,12 +31,27 @@ class AnnouncementController {
       password,
     };
 
-    await knex('points').insert(annouce);
+    const trx = await knex.transaction();
 
-    return response.json(annouce);
+    const insertedIds = await trx('points').insert(annouce);
+
+    const announceID = insertedIds[0];
+
+    const pointItems = {
+      item_id: Number(items),
+      point_id: announceID,
+    };
+
+    await trx('point_items').insert(pointItems);
+    await trx.commit();
+
+    return response.json({
+      id: announceID,
+      ...annouce,
+    });
   }
 
-  async index(request: Request, response: Response) {
+  async show(request: Request, response: Response) {
     const { password } = request.params;
 
     const announcements = await knex('points')

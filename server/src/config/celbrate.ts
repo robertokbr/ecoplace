@@ -23,6 +23,7 @@ export default {
       latitude: Joi.number().required(),
       city: Joi.string().required(),
       uf: Joi.string().required().max(2),
+      items: Joi.string().required(),
       password: Joi.string().required(),
       price: Joi.number().required(),
       description: Joi.string(),
