@@ -63,7 +63,9 @@ const CreatePoint: React.FC = () => {
 
   useEffect(() => {
     api.get('items').then(response => {
-      setItems(response.data);
+      const requestItems = response.data;
+      requestItems.splice(requestItems[0], 1);
+      setItems(requestItems);
     });
   }, []);
 

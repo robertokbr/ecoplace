@@ -68,10 +68,6 @@ const Show: React.FC = () => {
             <h1>Buscar cadastros</h1>
 
             <fieldset>
-              <legend>
-                <h2>Palavra magica</h2>
-              </legend>
-
               <div className="field">
                 <label htmlFor="password" />
                 <input

@@ -2,6 +2,7 @@
 #container{
   display: flex;
   height: 100vh;
+background: ;
 }
 
 #divForm {
@@ -9,14 +10,14 @@
   flex-direction: column;
   min-height: 100%;
   height: 100%;
-  min-width: 768px;
+  min-width: 700px;
   max-width: 40%;
   flex: 0 0 40%;
   align-items: center;
   justify-content: space-evenly;
   position: fixed;
-  background: white url('../../assets/find.svg') no-repeat 380px bottom;
-  box-shadow: 10px 0 15px rgba(0, 0, 0, 0.055);
+  box-shadow: 10px 0 15px rgba(0, 0, 0, 0.096);
+  background: #045257;
 }
 
 
@@ -24,12 +25,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 100px 0 30px 0;
+  margin: 30px 0 100px 0;
 }
 
 .header a {
-  color: var(--title-color);
-  font-weight: bold;
+  color: white;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -44,11 +44,12 @@
 .containerForm{
   display: flex;
   flex-direction: column;
-  margin: 0 150px 280px 0;
+  margin: 0 150px 280px 100px;
 }
 
 #divForm form h1 {
   font-size: 50px;
+  color: white;
 }
 
 #divForm form fieldset {
@@ -104,7 +105,6 @@
 #divForm form button {
   width: 100%;
   height: 56px;
-  background: #0b666d;
   border-radius: 8px;
   color: #FFF;
   font-weight: bold;
@@ -115,9 +115,6 @@
   cursor: pointer;
   outline: 0;
 
-}
-
-#divForm form button:hover {
 
   background: linear-gradient(-45deg, #045257, #23A6D5,#23D5AB );
   background-size: 400% 400%;

@@ -1,12 +1,15 @@
+
 #page-home {
   height: 100vh;
-
   background: #045257 url('../../assets/backgroundAlt.svg') no-repeat 1150px bottom;
+
 }
+
 .headerContainer{
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 .headerContainer h1{
 font-size: 55px;
@@ -25,6 +28,7 @@ margin-right: 900px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
 }
 
 #page-home .content header {
