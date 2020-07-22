@@ -1,4 +1,4 @@
-import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
+import React, { useEffect, useState, ChangeEvent, FormEvent, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
@@ -80,25 +80,25 @@ const CreatePoint: React.FC = () => {
       });
   }, [selectedUf]);
 
-  function handleSelectUf(event: ChangeEvent<HTMLSelectElement>) {
+  const handleSelectUf = useCallback((event: ChangeEvent<HTMLSelectElement>) =>{
     const uf = event.target.value;
     setSelectedUf(uf);
-  }
+  },[])
 
-  function handleSelectCity(event: ChangeEvent<HTMLSelectElement>) {
+  const handleSelectCity(event: ChangeEvent<HTMLSelectElement>) {
     const City = event.target.value;
     setSelectedCity(City);
   }
-  function handleMapClick(event: LeafletMouseEvent) {
+  const handleMapClick(event: LeafletMouseEvent) {
     setSelectedPosition([event.latlng.lat, event.latlng.lng]);
   }
 
-  function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
+  const handleInputChange(event: ChangeEvent<HTMLInputElement>) {
     const { value, name } = event.target;
     setFormData({ ...formData, [name]: value });
   }
 
-  async function handleSubmit(event: FormEvent) {
+  async const handleSubmit(event: FormEvent) {
     event.preventDefault();
     const { name, email, whatsapp, password, price } = formData;
     const description = descriptionValue;
