@@ -1,4 +1,10 @@
-import React, { useEffect, useState, ChangeEvent, FormEvent, useCallback } from 'react';
+import React, {
+  useEffect,
+  useState,
+  ChangeEvent,
+  FormEvent,
+  useCallback,
+} from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
@@ -80,59 +86,77 @@ const CreatePoint: React.FC = () => {
       });
   }, [selectedUf]);
 
-  const handleSelectUf = useCallback((event: ChangeEvent<HTMLSelectElement>) =>{
-    const uf = event.target.value;
-    setSelectedUf(uf);
-  },[])
+  const handleSelectUf = useCallback(
+    (event: ChangeEvent<HTMLSelectElement>) => {
+      const uf = event.target.value;
+      setSelectedUf(uf);
+    },
+    [],
+  );
 
-  const handleSelectCity(event: ChangeEvent<HTMLSelectElement>) {
-    const City = event.target.value;
-    setSelectedCity(City);
-  }
-  const handleMapClick(event: LeafletMouseEvent) {
+  const handleSelectCity = useCallback(
+    (event: ChangeEvent<HTMLSelectElement>) => {
+      const City = event.target.value;
+      setSelectedCity(City);
+    },
+    [],
+  );
+  const handleMapClick = useCallback((event: LeafletMouseEvent) => {
     setSelectedPosition([event.latlng.lat, event.latlng.lng]);
-  }
+  }, []);
 
-  const handleInputChange(event: ChangeEvent<HTMLInputElement>) {
-    const { value, name } = event.target;
-    setFormData({ ...formData, [name]: value });
-  }
+  const handleInputChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      const { value, name } = event.target;
+      setFormData({ ...formData, [name]: value });
+    },
+    [formData],
+  );
 
-  async const handleSubmit(event: FormEvent) {
-    event.preventDefault();
-    const { name, email, whatsapp, password, price } = formData;
-    const description = descriptionValue;
-    const uf = selectedUf;
-    const city = selectedCity;
-    const [latitude, longitude] = selectedPosition;
-    const data = new FormData();
+  const handleSubmit = useCallback(
+    async (event: FormEvent) => {
+      event.preventDefault();
+      const { name, email, whatsapp, password, price } = formData;
+      const description = descriptionValue;
+      const uf = selectedUf;
+      const city = selectedCity;
+      const [latitude, longitude] = selectedPosition;
+      const data = new FormData();
 
-    data.append('name', name);
-    data.append('email', email);
-    data.append('whatsapp', whatsapp);
-    data.append('password', password);
-    data.append('price', price.split(',').join('.'));
-    data.append('description', description);
-    data.append('uf', uf);
-    data.append('city', city);
-    data.append('latitude', String(latitude));
-    data.append('longitude', String(longitude));
+      data.append('name', name);
+      data.append('email', email);
+      data.append('whatsapp', whatsapp);
+      data.append('password', password);
+      data.append('price', price.split(',').join('.'));
+      data.append('description', description);
+      data.append('uf', uf);
+      data.append('city', city);
+      data.append('latitude', String(latitude));
+      data.append('longitude', String(longitude));
 
-    if (selectedFile) {
-      data.append('image', selectedFile);
-    }
-    try {
-      await api.post('announce', data);
+      if (selectedFile) {
+        data.append('image', selectedFile);
+      }
+      try {
+        await api.post('announce', data);
 
-      setsuccessPage({
-        map: 'hideMap',
-        hideDiv: 'divShow',
-      });
-    } catch (message) {
-      alert(message);
-      console.log(message);
-    }
-  }
+        setsuccessPage({
+          map: 'hideMap',
+          hideDiv: 'divShow',
+        });
+      } catch (err) {
+        alert(err);
+      }
+    },
+    [
+      descriptionValue,
+      formData,
+      selectedFile,
+      selectedCity,
+      selectedPosition,
+      selectedUf,
+    ],
+  );
 
   return (
     <div className="cointainerAnnounce">

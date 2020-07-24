@@ -1,4 +1,10 @@
-import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
+import React, {
+  useEffect,
+  useState,
+  ChangeEvent,
+  FormEvent,
+  useCallback,
+} from 'react';
 import './styles.css';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
@@ -94,66 +100,89 @@ const CreatePoint: React.FC = () => {
       });
   }, [selectedUf]);
 
-  function handleSelectUf(event: ChangeEvent<HTMLSelectElement>) {
-    const uf = event.target.value;
-    setSelectedUf(uf);
-  }
+  const handleSelectUf = useCallback(
+    (event: ChangeEvent<HTMLSelectElement>) => {
+      const uf = event.target.value;
+      setSelectedUf(uf);
+    },
+    [],
+  );
 
-  function handleSelectCity(event: ChangeEvent<HTMLSelectElement>) {
-    const City = event.target.value;
-    setSelectedCity(City);
-  }
-  function handleMapClick(event: LeafletMouseEvent) {
+  const handleSelectCity = useCallback(
+    (event: ChangeEvent<HTMLSelectElement>) => {
+      const City = event.target.value;
+      setSelectedCity(City);
+    },
+    [],
+  );
+  const handleMapClick = useCallback((event: LeafletMouseEvent) => {
     setSelectedPosition([event.latlng.lat, event.latlng.lng]);
-  }
+  }, []);
 
-  function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
-    const { value, name } = event.target;
-    setFormData({ ...formData, [name]: value });
-  }
+  const handleInputChange = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      const { value, name } = event.target;
+      setFormData({ ...formData, [name]: value });
+    },
+    [formData],
+  );
 
-  function handelSelectedItem(id: number) {
-    const alreadySelected = selectedItems.findIndex(item => item === id);
-    if (alreadySelected >= 0) {
-      const filteredItems = selectedItems.filter(item => item !== id);
-      setselectedItems(filteredItems);
-    } else {
-      setselectedItems([...selectedItems, id]);
-    }
-  }
-  async function handleSubmit(event: FormEvent) {
-    event.preventDefault();
-    const { name, email, whatsapp, password } = formData;
-    const uf = selectedUf;
-    const city = selectedCity;
-    const [latitude, longitude] = selectedPosition;
-    const item = selectedItems;
-    const data = new FormData();
+  const handelSelectedItem = useCallback(
+    (id: number) => {
+      const alreadySelected = selectedItems.findIndex(item => item === id);
+      if (alreadySelected >= 0) {
+        const filteredItems = selectedItems.filter(item => item !== id);
+        setselectedItems(filteredItems);
+      } else {
+        setselectedItems([...selectedItems, id]);
+      }
+    },
+    [selectedItems],
+  );
 
-    data.append('name', name);
-    data.append('email', email);
-    data.append('whatsapp', whatsapp);
-    data.append('password', password);
-    data.append('uf', uf);
-    data.append('city', city);
-    data.append('latitude', String(latitude));
-    data.append('longitude', String(longitude));
-    data.append('items', item.join(','));
+  const handleSubmit = useCallback(
+    async (event: FormEvent) => {
+      event.preventDefault();
+      const { name, email, whatsapp, password } = formData;
+      const uf = selectedUf;
+      const city = selectedCity;
+      const [latitude, longitude] = selectedPosition;
+      const item = selectedItems;
+      const data = new FormData();
 
-    if (selectedFile) {
-      data.append('image', selectedFile);
-    }
-    try {
-      await api.post('points', data);
-      console.log(data);
-      setsuccessPage({
-        map: 'hideMap',
-        hideDiv: 'divShow',
-      });
-    } catch (errors) {
-      alert(errors);
-    }
-  }
+      data.append('name', name);
+      data.append('email', email);
+      data.append('whatsapp', whatsapp);
+      data.append('password', password);
+      data.append('uf', uf);
+      data.append('city', city);
+      data.append('latitude', String(latitude));
+      data.append('longitude', String(longitude));
+      data.append('items', item.join(','));
+
+      if (selectedFile) {
+        data.append('image', selectedFile);
+      }
+      try {
+        await api.post('points', data);
+        console.log(data);
+        setsuccessPage({
+          map: 'hideMap',
+          hideDiv: 'divShow',
+        });
+      } catch (errors) {
+        alert(errors);
+      }
+    },
+    [
+      formData,
+      selectedCity,
+      selectedFile,
+      selectedItems,
+      selectedPosition,
+      selectedUf,
+    ],
+  );
 
   return (
     <>
