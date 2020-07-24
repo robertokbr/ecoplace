@@ -16,11 +16,15 @@ body {
   color: var(--text-color);
 }
 
-body, input, button {
+body, input, textarea, select {
   font-family: Roboto, Arial, Helvetica, sans-serif;
-  outline: 0;
+  outline-color: #34CB7970 ;
 }
+button{
+  cursor:pointer;
+  outline: 0;
 
+}
 h1, h2, h3, h4, h5, h6 {
   color: var(--title-color);
   font-family: Ubuntu;
