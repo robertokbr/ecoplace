@@ -25,23 +25,11 @@ const Home: React.FC = () => {
             No ecoplace você pode cadastrar no mapa pontos de coleta do seu
             material reciclado, comprar produtos reciclados e muito mais!
           </p>
-          <Link to="/create-point">
+          <Link to="/menu">
             <span>
               <FiLogIn />
             </span>
-            <strong>Cadastre um ponto de coleta</strong>
-          </Link>
-          <Link to="/create-announce">
-            <span>
-              <FiLogIn />
-            </span>
-            <strong>Cadastre um Anúncio</strong>
-          </Link>
-          <Link to="/get-point">
-            <span>
-              <FiSearch />
-            </span>
-            <strong>Buscar Cadastros</strong>
+            <strong>Iniciar</strong>
           </Link>
         </main>
       </div>
