@@ -68,7 +68,7 @@ margin-right: 900px;
   align-items: center;
   overflow: hidden;
 
-  margin-top: 32px;
+  margin-top: 48px;
 }
 
 #page-home .content main a span {
@@ -137,10 +137,4 @@ margin-right: 900px;
   #page-home .content main p {
     font-size: 24px;
   }
-}
-
-#page-home .content main a + a + a{
-max-width: 250px;
-margin-left: 40px;
-background-color:#075157 ;
 }
