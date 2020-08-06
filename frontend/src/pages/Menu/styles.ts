@@ -1,27 +1,44 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import menu from '../../assets/menuBack.png';
-import menuIcon from '../../assets/menuIcon.svg';
-import {} from 'polished';
+import { shade } from 'polished';
 
 export const Container = styled.div`
-  background: #285c5e url(${menu}) no-repeat;
+  background: #285c5e;
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
 `;
 
 export const Header = styled.div`
   width: 100vw;
+  max-height: 96px;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.08);
+
+  a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+  }
+
+  svg {
+    margin-right: 16px;
+    color: var(--primary-color);
+  }
 `;
 
 export const Cards = styled.div`
+  margin-top: 96px;
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 80px;
   align-items: center;
   justify-items: center;
 `;
@@ -29,32 +46,33 @@ export const Cards = styled.div`
 export const Card = styled.div`
   display: flex;
   flex-direction: column;
-  background: #30959b;
+  background: #231f20;
   border-radius: 10px;
   padding: 20px;
-  color: white;
   transition: 0.2s;
   height: 256px;
-  width: 256px;
+  width: 280px;
   position: relative;
+
   img {
-    width: 160px;
+    width: 96px;
     position: absolute;
-    top: -24%;
-    left: 20%;
+    top: -16%;
+    left: 32%;
   }
   &:hover {
     transform: scale(1.1);
-    background: #30959b url(${menuIcon}) no-repeat center;
+    background: ${shade(-0.5, '#231f20')};
   }
 
   a {
-    color: #ffffff;
     text-decoration-line: none;
     display: flex;
     height: 100%;
     align-items: center;
     div {
+      padding-top: 40px;
+      color: #ffffff;
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -68,6 +86,10 @@ export const Card = styled.div`
       p {
         color: #ffffff99;
         margin: 24px 0;
+        text-align: center;
+      }
+      svg {
+        color: var(--primary-color);
       }
     }
   }
