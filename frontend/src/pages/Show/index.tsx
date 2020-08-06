@@ -52,9 +52,9 @@ const Show: React.FC = () => {
     <div id="container">
       <div id="divForm">
         <div className="header">
-          <Link to="/">
+          <Link to="/menu">
             <FiArrowLeft />
-            Voltar para home
+            Voltar para Menu
           </Link>
         </div>
 

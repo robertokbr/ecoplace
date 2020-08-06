@@ -2,7 +2,7 @@
 #container{
   display: flex;
   height: 100vh;
-background: ;
+background: var(--background-secundary-color) ;
 }
 
 #divForm {
@@ -14,18 +14,20 @@ background: ;
   max-width: 40%;
   flex: 0 0 40%;
   align-items: center;
-  justify-content: space-evenly;
   position: fixed;
-  box-shadow: 10px 0 15px rgba(0, 0, 0, 0.096);
+  box-shadow: 10px 0 32px rgba(0, 0, 0, 0.315);
   background: #045257;
 }
 
 
-.header {
+#divForm .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin: 30px 0 100px 0;
+  margin: 0 72px;
+  background: rgba(0, 0, 0, 0.08);
+  max-height: 96px;
+  width: 100%;
+flex:1;
 }
 
 .header a {
@@ -33,7 +35,7 @@ background: ;
   text-decoration: none;
   display: flex;
   align-items: center;
-  margin-right: 480px;
+  margin-left: 50px;
 }
 
 .header a svg {
