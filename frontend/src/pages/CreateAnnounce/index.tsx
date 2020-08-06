@@ -179,147 +179,148 @@ const CreatePoint: React.FC = () => {
             }}
           />
         </div>
-
-        <form onSubmit={handleSubmit}>
-          <div className="header">
-            <Link to="/">
-              <FiArrowLeft />
-              Voltar para home
-            </Link>
-          </div>
-
-          <Dropzone onFileUploaded={setSelectedFile} />
-          <fieldset>
-            <legend>
-              <h2>Dados</h2>
-            </legend>
-
-            <div className="field">
-              <label htmlFor="name">Título</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                onChange={handleInputChange}
-              />
+        <section className="formContainer">
+          <form onSubmit={handleSubmit}>
+            <div className="header">
+              <Link to="/menu">
+                <FiArrowLeft />
+                Voltar para Menu
+              </Link>
             </div>
 
-            <div className="field-group">
-              <div className="field">
-                <label htmlFor="email">E-mail</label>
-
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  onChange={handleInputChange}
-                />
-              </div>
+            <Dropzone onFileUploaded={setSelectedFile} />
+            <fieldset>
+              <legend>
+                <h2>Dados</h2>
+              </legend>
 
               <div className="field">
-                <label htmlFor="Whatsapp">Whatsapp</label>
+                <label htmlFor="name">Título</label>
                 <input
                   type="text"
-                  name="whatsapp"
-                  id="whatsapp"
+                  name="name"
+                  id="name"
                   onChange={handleInputChange}
                 />
               </div>
-            </div>
-            <div className="field-group">
-              <div className="field">
-                <label htmlFor="password">Password</label>
 
-                <input
-                  type="text"
-                  name="password"
-                  id="password"
-                  onChange={handleInputChange}
+              <div className="field-group">
+                <div className="field">
+                  <label htmlFor="email">E-mail</label>
+
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    onChange={handleInputChange}
+                  />
+                </div>
+
+                <div className="field">
+                  <label htmlFor="Whatsapp">Whatsapp</label>
+                  <input
+                    type="text"
+                    name="whatsapp"
+                    id="whatsapp"
+                    onChange={handleInputChange}
+                  />
+                </div>
+              </div>
+              <div className="field-group">
+                <div className="field">
+                  <label htmlFor="password">Password</label>
+
+                  <input
+                    type="text"
+                    name="password"
+                    id="password"
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className="field">
+                  <label htmlFor="price">Preço</label>
+
+                  <input
+                    type="text"
+                    name="price"
+                    id="price"
+                    onChange={handleInputChange}
+                  />
+                </div>
+              </div>
+              <div
+                className="field"
+                style={{
+                  height: '200px',
+                }}
+              >
+                <label htmlFor="description">Descrição</label>
+                <textarea
+                  value={descriptionValue}
+                  onChange={e => setdescriptionValue(e.target.value)}
                 />
               </div>
-              <div className="field">
-                <label htmlFor="price">Preço</label>
+            </fieldset>
 
-                <input
-                  type="text"
-                  name="price"
-                  id="price"
-                  onChange={handleInputChange}
+            <fieldset>
+              <legend>
+                <h2>Endereço</h2>
+                <span>Selecione o endereço no mapa</span>
+              </legend>
+
+              <Map
+                className={successPage.map}
+                center={initialPosition}
+                zoom={15}
+                onclick={handleMapClick}
+              >
+                <TileLayer
+                  attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
+                <Marker position={selectedPosition} />
+              </Map>
+
+              <div className="field-group">
+                <div className="field">
+                  <label htmlFor="uf">Estado (UF)</label>
+                  <select
+                    name="uf"
+                    id="uf"
+                    value={selectedUf}
+                    onChange={handleSelectUf}
+                  >
+                    <option value="0">Selecione uma UF</option>
+                    {ufs.map(uf => (
+                      <option value={uf} key={uf}>
+                        {uf}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="field">
+                  <label htmlFor="city">Cidade</label>
+                  <select
+                    name="city"
+                    id="city"
+                    value={selectedCity}
+                    onChange={handleSelectCity}
+                  >
+                    <option value="0">Selecione uma cidade</option>
+                    {cities.map(city => (
+                      <option key={`Municipio de${city}`} value={city}>
+                        {city}
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
-            </div>
-            <div
-              className="field"
-              style={{
-                height: '200px',
-              }}
-            >
-              <label htmlFor="description">Descrição</label>
-              <textarea
-                value={descriptionValue}
-                onChange={e => setdescriptionValue(e.target.value)}
-              />
-            </div>
-          </fieldset>
+            </fieldset>
 
-          <fieldset>
-            <legend>
-              <h2>Endereço</h2>
-              <span>Selecione o endereço no mapa</span>
-            </legend>
-
-            <Map
-              className={successPage.map}
-              center={initialPosition}
-              zoom={15}
-              onclick={handleMapClick}
-            >
-              <TileLayer
-                attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              <Marker position={selectedPosition} />
-            </Map>
-
-            <div className="field-group">
-              <div className="field">
-                <label htmlFor="uf">Estado (UF)</label>
-                <select
-                  name="uf"
-                  id="uf"
-                  value={selectedUf}
-                  onChange={handleSelectUf}
-                >
-                  <option value="0">Selecione uma UF</option>
-                  {ufs.map(uf => (
-                    <option value={uf} key={uf}>
-                      {uf}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="field">
-                <label htmlFor="city">Cidade</label>
-                <select
-                  name="city"
-                  id="city"
-                  value={selectedCity}
-                  onChange={handleSelectCity}
-                >
-                  <option value="0">Selecione uma cidade</option>
-                  {cities.map(city => (
-                    <option key={`Municipio de${city}`} value={city}>
-                      {city}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
-          </fieldset>
-
-          <button type="submit">Cadastrar Anúncio</button>
-        </form>
+            <button type="submit">Cadastrar Anúncio</button>
+          </form>
+        </section>
       </div>
       <div id="hide" className={successPage.hideDiv}>
         <div className="content">
