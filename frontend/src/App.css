@@ -2,6 +2,7 @@
   --primary-color: #34CB79;
   --title-color: #322153;
   --text-color: #6C6C80;
+  --background-secundary-color: #f5f5f5;
 }
 
 * {
@@ -14,18 +15,30 @@ body {
   background: #F0F0F5;
   -webkit-font-smoothing: antialiased;
   color: var(--text-color);
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+
 }
 
-body, input, textarea, select {
+ input, textarea, select {
   font-family: Roboto, Arial, Helvetica, sans-serif;
-  outline-color: #34CB7970 ;
+outline: 0;
+transition: 0.2s;
 }
+
+input:hover, textarea:hover, select:hover {
+  transform: scale(1.05);
+
+}
+
 button{
   cursor:pointer;
   outline: 0;
 
 }
+
+
 h1, h2, h3, h4, h5, h6 {
   color: var(--title-color);
   font-family: Ubuntu;
 }
+
