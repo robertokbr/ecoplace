@@ -38,7 +38,7 @@ div#page-create-point div#divForm {
 
 /**/
  section.formContainer{
-max-width: 39rem;
+max-width: 38rem;
 display: flex;
 margin-left: auto;
 margin-right: 14rem;
@@ -167,7 +167,7 @@ margin-right: 0;
 }
 
 #page-create-point form .leaflet-container {
-  width: 40rem;
+  width: 38rem;
   height: 22rem;
   border-radius: 8px;
   margin-bottom: 24px;

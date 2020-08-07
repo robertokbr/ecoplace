@@ -8,10 +8,16 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  
+  @media(max-width: 1100px){
+    min-height: 88rem;
+    width: 40rem;
+    min-width: 100%;
+  }
 `;
 
 export const Header = styled.div`
-  width: 100vw;
+  width: 100%;
   max-height: 96px;
   flex: 1;
   display: flex;
@@ -38,7 +44,7 @@ export const Cards = styled.div`
   display: grid;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 3rem;
   align-items: center;
   justify-items: center;
 `;
@@ -50,8 +56,8 @@ export const Card = styled.div`
   border-radius: 10px;
   padding: 20px;
   transition: 0.2s;
-  height: 256px;
-  width: 280px;
+  height: 16rem;
+  width: 17.5rem;
   position: relative;
 
   img {

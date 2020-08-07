@@ -13,14 +13,14 @@ const Home: React.FC = () => {
             <img
               src={logo}
               alt="Ecoleta"
-              style={{ width: '100px', marginRight: '7px' }}
+              style={{ width: '5rem', marginRight: '5px' }}
             />
             <h1>coplace</h1>
           </div>
         </header>
 
         <main>
-          <h1>Recicle, Venda e ajude o planeta com o Ecoplace! </h1>
+          <h1>Recicle, Venda<br/>e ajude o planeta com o Ecoplace! </h1>
           <p>
             No ecoplace você pode cadastrar no mapa pontos de coleta do seu
             material reciclado, comprar produtos ecologicos e muito mais!
