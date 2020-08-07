@@ -26,7 +26,7 @@ transition: 0.2s;
 }
 
 input:hover, textarea:hover, select:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 
 }
 
