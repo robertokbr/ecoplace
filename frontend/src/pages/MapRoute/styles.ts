@@ -51,7 +51,7 @@ export const Container = styled.div`
 export const Controll = styled.div`
   width: 496px;
   height: 100%;
-  background: #285c5e;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,7 +161,8 @@ export const Selector = styled.div`
     label {
       font-size: 14px;
       margin-bottom: 8px;
-      color: #ffffff;
+      color: var(--title-color);
+      font-weight: bold;
     }
     select {
       -webkit-appearance: none;
