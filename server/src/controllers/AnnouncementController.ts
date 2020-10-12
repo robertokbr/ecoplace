@@ -65,7 +65,7 @@ class AnnouncementController {
     const serializedPoints = announcements.map(announce => {
       return {
         ...announce,
-        imagem_url: `http://192.168.0.5:3333/uploads/point/${announce.image}`,
+        imagem_url: `http://localhost:3333/uploads/point/${announce.image}`,
       };
     });
     return response.json(serializedPoints);
