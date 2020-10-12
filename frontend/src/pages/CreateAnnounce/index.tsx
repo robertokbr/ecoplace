@@ -122,6 +122,7 @@ const CreatePoint: React.FC = () => {
       const city = selectedCity;
       const [latitude, longitude] = selectedPosition;
       const data = new FormData();
+      const item = '1';
 
       data.append('name', name);
       data.append('email', email);
@@ -133,6 +134,7 @@ const CreatePoint: React.FC = () => {
       data.append('city', city);
       data.append('latitude', String(latitude));
       data.append('longitude', String(longitude));
+      data.append('items', item);
 
       if (selectedFile) {
         data.append('image', selectedFile);
