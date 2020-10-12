@@ -42,8 +42,9 @@ export const Container = styled.div`
         object-fit: cover;
       }
       p {
-        font-size: 12px;
+        font-size: 10px;
         color: #ffffff;
+        max-width: 80px;
       }
     }
   }
@@ -51,7 +52,7 @@ export const Container = styled.div`
 export const Controll = styled.div`
   width: 496px;
   height: 100%;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -145,7 +145,7 @@ const MapRoute: React.FC = () => {
             icon={L.divIcon({
               html: ` <div>
             <img src=${pointMap.imagem_url} alt="pointMap" />
-          <p>${pointMap.name}</p>
+          <p numberOfLines={1}>${pointMap.name}</p>
         </div>`,
               className: 'marker',
             })}
