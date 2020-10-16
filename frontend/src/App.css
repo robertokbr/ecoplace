@@ -21,18 +21,21 @@ body {
 
  input, textarea, select {
   font-family: Roboto, Arial, Helvetica, sans-serif;
-outline: 0;
-transition: 0.2s;
+  outline: 0;
+  transition: 0.2s;
+  border: 3px solid transparent !important;
 }
 
-input:hover, textarea:hover, select:hover {
-  transform: scale(1.03);
+input:focus-within, textarea:focus-within, select:focus-within {
+  border: 3px solid #72f5c3 !important;
+
 
 }
 
 button{
   cursor:pointer;
   outline: 0;
+  border: 3px solid #72f5c3 !important;
 
 }
 
