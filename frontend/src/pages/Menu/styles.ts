@@ -8,8 +8,8 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  
-  @media(max-width: 1100px){
+
+  @media (max-width: 1100px) {
     min-height: 88rem;
     width: 40rem;
     min-width: 100%;
@@ -17,25 +17,11 @@ export const Container = styled.div`
 `;
 
 export const Header = styled.div`
-  width: 100%;
-  max-height: 96px;
-  flex: 1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.08);
+  background: transparent;
 
-  a {
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    margin-left: 50px;
-  }
-
-  svg {
-    margin-right: 16px;
-    color: var(--primary-color);
+  margin: 38px auto 15px 62px;
+  img {
+    width: 70px;
   }
 `;
 
