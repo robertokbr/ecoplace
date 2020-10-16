@@ -17,65 +17,44 @@ export const Container = styled.div`
   .marker {
     div {
       border-radius: 5px;
-      height: 72px;
-      width: 90px;
+      height: 90px;
+      width: 120px;
       background: #34cb79;
       display: flex;
       flex-direction: column;
       align-items: center;
       overflow: hidden;
       position: relative;
-      &::before {
-        content: '';
-        border-style: solid;
-        border-color: #285c5e transparent;
-        border-width: 6px 6px 0 6px;
-        top: 110%;
-        position: absolute;
-        left: 50%;
-        transform: translatex(-50%);
-      }
-
       img {
-        width: 90px;
-        height: 55px;
+        width: 120px;
+        height: 75px;
         object-fit: cover;
       }
       p {
         font-size: 10px;
+        font-weight: bold;
         color: #ffffff;
         max-width: 80px;
       }
     }
   }
 `;
-export const Controll = styled.div`
-  width: 496px;
-  height: 100%;
 
+export const Header = styled.div`
+  background: transparent;
+  margin: 30px auto 30px 30px;
+
+  img {
+    width: 70px;
+  }
+`;
+
+export const Controll = styled.div`
+  flex: 1;
+  max-width: 496px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  header {
-    margin-bottom: 32px;
-    display: flex;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.08);
-
-    a {
-      color: white;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      margin: 24px auto 40px 24px;
-    }
-
-    svg {
-      margin-right: 16px;
-      color: var(--primary-color);
-    }
-  }
 
   button {
     width: 260px;
@@ -87,7 +66,7 @@ export const Controll = styled.div`
     font-size: 16px;
     border: 0;
     transition: background-color 0.2s;
-    margin-bottom: 16px;
+    margin-bottom: 70px;
     cursor: pointer;
     &:hover {
       background: ${shade(0.2, '#34CB79')};
@@ -97,9 +76,8 @@ export const Controll = styled.div`
 export const Items = styled.div`
   max-height: 37rem;
   overflow: auto;
-  padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.08);
-
+  padding: 10px 10px;
+  background: rgba(0, 0, 0, 0.03);
   border-radius: 10px;
   ul {
     display: grid;
@@ -109,7 +87,8 @@ export const Items = styled.div`
   }
   li {
     background: #f5f5f5;
-    border: 2px solid rgba(red, green, blue);
+    border: 2px solid transparent;
+
     height: 180px;
     border-radius: 8px;
     padding: 32px 24px 16px;
@@ -121,12 +100,6 @@ export const Items = styled.div`
     text-align: center;
     cursor: pointer;
     transition: 0.2s;
-
-    &:hover {
-      transform: scale(1.05);
-      background: ${shade(0.1, '#e1faec')};
-      border: 2px solid #34cb79;
-    }
   }
 
   span {
@@ -170,7 +143,7 @@ export const Selector = styled.div`
       -moz-appearance: none;
       appearance: none;
       flex: 1;
-      background: #f0f0f5;
+      background: #dedde1;
       border-radius: 8px;
       border: 0;
       padding: 16px 24px;
