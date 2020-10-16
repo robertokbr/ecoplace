@@ -24,7 +24,6 @@ background: var(--background-secundary-color) ;
   display: flex;
   align-items: center;
   margin: 0 72px;
-  background: rgba(0, 0, 0, 0.08);
   max-height: 96px;
   width: 100%;
   flex:1;
@@ -38,15 +37,16 @@ background: var(--background-secundary-color) ;
   margin-left: 50px;
 }
 
-.header a svg {
-  margin-right: 16px;
-  color: var(--primary-color);
+
+#divForm #show a{
+  margin-left: 45.5px;
+
 }
 
 .containerForm{
   display: flex;
   flex-direction: column;
-  margin: 0 150px 280px 100px;
+  margin: 100px 150px 280px 100px;
 }
 
 #divForm form h1 {
@@ -83,7 +83,7 @@ background: var(--background-secundary-color) ;
   flex: 1;
   background: #F0F0F5;
   border-radius: 8px;
-  border: 0;
+  border: 3px solid #72f5c3 !important;
   padding: 16px 24px;
   font-size: 16px;
   color: #6C6C80;
