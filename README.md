@@ -26,12 +26,14 @@ ECOPLACE
 </a>
 </p>
 
-<h1 align="center">
-  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/screencapture-localhost-3000-2020-06-24-09_49_58.png">
-   <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Captura%20de%20Tela%20(105).png" >
-  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Captura%20de%20Tela%20(106).png" >
-  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Captura%20de%20Tela%20(107).png" ><img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Home.png" >
-</h1>
+
+  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/homepage.png" >
+  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/dash.png"  >
+  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/ecommerce.png" >
+  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/ecoleta.png"  >
+  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/anuncios.png" >
+  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/map.png" >
+  <img src="https://github.com/robertokbr/Ecoplace/blob/master/Github/Home.png" width="200px">
 
 ## 💻 Techs
 - Typescript -
@@ -49,22 +51,57 @@ ECOPLACE
 - Multer - 
 
 
-## 🕹 How To Use
+## 🕹 How To Start
 
 To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v10.16][nodejs] or higher + [Yarn v1.13][yarn] or higher installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
 $ git clone https://github.com/robertokbr/Ecoplace
+```
 
+### Web Frotend
+
+```bash
 # Go into the repository
-$ cd Ecoplace
+$ cd Ecoplace/fronted
 
 # Install dependencies
 $ yarn install
 
 # Run the app
 $ yarn start
+```
+
+### Server
+
+```bash
+# Go into the Server directory
+$ cd Ecoplace/server
+
+# Install dependencies
+$ yarn install
+
+# Run the database
+$ yarn migrate:run
+
+# Run the database seed
+$ yarn seed run
+
+# Run the server
+$ yarn dev:server
+```
+### Mobile
+
+```bash
+# Go into the Server directory
+$ cd Ecoplace/mobile
+
+# Install dependencies
+$ yarn install
+
+# Run the application
+$ expo start
 ```
 
 ## 🏗 How to contribute
