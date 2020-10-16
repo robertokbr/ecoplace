@@ -50,22 +50,15 @@ form {
   display: flex;
   flex-direction: column;
 }
-#page-create-point form .header {
-  margin-top: 5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.header {
+ background: transparent;
+position: absolute;
+top: 4%;
+left: -8%;
 }
-#page-create-point form .header a {
-min-width: 10rem;
-margin-bottom: 10px;
-margin-right: 0;
-  color: var(--title-color);
-  font-weight: bold;
-  text-decoration: none;
 
-
-
+.header img {
+  width: 70px;
 }
 
 

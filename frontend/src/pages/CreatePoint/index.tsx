@@ -16,6 +16,7 @@ import successImg from '../../assets/success.svg';
 import Dropzone from '../../components/Dropzone';
 import logo from '../../assets/logoAlt.svg';
 import recycle from '../../assets/recycling_.svg';
+import backIcon from '../../assets/back.svg';
 
 interface Item {
   id: number;
@@ -189,13 +190,6 @@ const CreatePoint: React.FC = () => {
       <div id="page-create-point">
         <section className="formContainer">
           <form onSubmit={handleSubmit}>
-            <div className="header">
-              <Link to="/menu">
-                <FiArrowLeft />
-                Voltar para Menu
-              </Link>
-            </div>
-
             <Dropzone onFileUploaded={setSelectedFile} />
             <fieldset>
               <legend>
@@ -330,6 +324,11 @@ const CreatePoint: React.FC = () => {
         </section>
         <div id="divForm">
           <div className="titlePage">
+            <div className="header">
+              <Link to="/menu">
+                <img src={backIcon} alt="voltar" />
+              </Link>
+            </div>
             <img
               src={logo}
               alt="Logo"

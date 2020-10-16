@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { FiKey, FiArrowLeft, FiTrash2 } from 'react-icons/fi';
 import api from '../../services/api';
 import logo from '../../assets/logoAlt.svg';
+import backIcon from '../../assets/back.svg';
 
 interface Announce {
   id: number;
@@ -51,10 +52,9 @@ const Show: React.FC = () => {
   return (
     <div id="container">
       <div id="divForm">
-        <div className="header">
+        <div id="show" className="header">
           <Link to="/menu">
-            <FiArrowLeft />
-            Voltar para Menu
+            <img src={backIcon} alt="voltar" />
           </Link>
         </div>
 

@@ -20,7 +20,10 @@ const Home: React.FC = () => {
         </header>
 
         <main>
-          <h1>Recicle, Venda<br/>e ajude o planeta com o Ecoplace! </h1>
+          <h1>
+            Recicle, Venda
+            <br />e ajude o planeta com o Ecoplace!
+          </h1>
           <p>
             No ecoplace você pode cadastrar no mapa pontos de coleta do seu
             material reciclado, comprar produtos ecologicos e muito mais!

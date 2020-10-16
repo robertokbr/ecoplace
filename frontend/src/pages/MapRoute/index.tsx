@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState, ChangeEvent } from 'react';
 import axios from 'axios';
 import { Map, TileLayer, Marker } from 'react-leaflet';
-import L, { LeafletMouseEvent, DivIcon, point } from 'leaflet';
-import { Link, useParams } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
-import { Container, Controll, Selector, Items } from './styles';
+import L from 'leaflet';
+import { Link } from 'react-router-dom';
+import { Container, Controll, Selector, Items, Header } from './styles';
 import '../CreatePoint/styles.css';
 import api from '../../services/api';
+import backIcon from '../../assets/back.svg';
 
 interface IBGEUFResponse {
   sigla: string;
@@ -155,12 +155,11 @@ const MapRoute: React.FC = () => {
       </Map>
 
       <Controll>
-        <header>
-          <Link to="/">
-            <FiArrowLeft />
-            Voltar para home
+        <Header>
+          <Link to="/Menu">
+            <img src={backIcon} alt="voltar" />
           </Link>
-        </header>
+        </Header>
 
         <Items>
           <ul>

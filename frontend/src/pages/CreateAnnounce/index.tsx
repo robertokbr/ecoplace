@@ -16,6 +16,7 @@ import Dropzone from '../../components/Dropzone';
 import './styles.css';
 import logo from '../../assets/logoAlt.svg';
 import recycle from '../../assets/recycle.svg';
+import backIcon from '../../assets/back.svg';
 
 interface IBGEUFResponse {
   sigla: string;
@@ -165,6 +166,11 @@ const CreatePoint: React.FC = () => {
       <div id="page-create-point">
         <div id="divForm">
           <div className="titlePage">
+            <div className="header">
+              <Link to="/menu">
+                <img src={backIcon} alt="voltar" />
+              </Link>
+            </div>
             <img
               src={logo}
               alt="Logo"
@@ -183,13 +189,6 @@ const CreatePoint: React.FC = () => {
         </div>
         <section className="formContainer">
           <form onSubmit={handleSubmit}>
-            <div className="header">
-              <Link to="/menu">
-                <FiArrowLeft />
-                Voltar para Menu
-              </Link>
-            </div>
-
             <Dropzone onFileUploaded={setSelectedFile} />
             <fieldset>
               <legend>

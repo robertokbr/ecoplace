@@ -7,14 +7,14 @@ import ecoIcon from '../../assets/icons/ecoIcon.svg';
 import iconBuy from '../../assets/icons/iconBuy.svg';
 import iconPoints from '../../assets/icons/iconPoints.svg';
 import iconMyAnnounce from '../../assets/icons/iconMyAnnounce.svg';
+import backIcon from '../../assets/back.svg';
 
 const Menu: React.FC = () => {
   return (
     <Container>
       <Header>
         <Link to="/">
-          <FiArrowLeft />
-          Voltar para home
+          <img src={backIcon} alt="voltar" />
         </Link>
       </Header>
       <Cards>
