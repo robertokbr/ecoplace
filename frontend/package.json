@@ -11,7 +11,7 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/react-leaflet": "^2.5.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "framer-motion": "^2.3.0",
     "leaflet": "^1.6.0",
     "polished": "^3.6.5",
