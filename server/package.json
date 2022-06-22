@@ -9,7 +9,7 @@
     "express": "^4.17.1",
     "knex": "^0.21.2",
     "multer": "^1.4.2",
-    "sqlite3": "^5.0.0"
+    "sqlite3": "^5.0.3"
   },
   "scripts": {
     "dev:server": "ts-node-dev  --transpileOnly --ignore node_modules  src/server.ts",
